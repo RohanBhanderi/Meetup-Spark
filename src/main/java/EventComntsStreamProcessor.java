@@ -108,21 +108,110 @@ public class EventComntsStreamProcessor {
 							Float score = getScore(eventDetails);
 
 							Put put = new Put(Bytes.toBytes(eventDetails.getId()));
-							put.addColumn(Bytes.toBytes("comm"), Bytes.toBytes("comm"), Bytes.toBytes(eventDetails.getComment()));
+							try{
+								put.addColumn(Bytes.toBytes("comm"), Bytes.toBytes("comm"), Bytes.toBytes(eventDetails.getComment()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("comm"), Bytes.toBytes("score"), Bytes.toBytes(score));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("event"), Bytes.toBytes("event_name"), Bytes.toBytes(eventDetails.getEvent_name()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("event"), Bytes.toBytes("event_id"), Bytes.toBytes(eventDetails.getEvent_id()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("member"), Bytes.toBytes("member_id"), Bytes.toBytes(eventDetails.getMember_id()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("member"), Bytes.toBytes("member_name"), Bytes.toBytes(eventDetails.getMember_name()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_city"), Bytes.toBytes(eventDetails.getGroup_city()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_country"), Bytes.toBytes(eventDetails.getGroup_country()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_state"), Bytes.toBytes(eventDetails.getGroup_state()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_id"), Bytes.toBytes(eventDetails.getGroup_id()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_name"), Bytes.toBytes(eventDetails.getGroup_name()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_lon"), Bytes.toBytes(eventDetails.getGroup_lon()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_lat"), Bytes.toBytes(eventDetails.getGroup_lat()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_cat"), Bytes.toBytes(eventDetails.getGroup_cat()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
+							
+							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_cat_id"), Bytes.toBytes(eventDetails.getGroup_cat_id()));
+							}catch(Exception e){
+								System.err.println("comm => " + eventDetails.getComment());
+								System.err.println(line);
+							}
 							
 							return new Tuple2<ImmutableBytesWritable, Put>(new ImmutableBytesWritable(), put);
 						}
