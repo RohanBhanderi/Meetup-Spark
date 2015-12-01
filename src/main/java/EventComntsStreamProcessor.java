@@ -112,105 +112,106 @@ public class EventComntsStreamProcessor {
 								put.addColumn(Bytes.toBytes("comm"), Bytes.toBytes("comm"), Bytes.toBytes(eventDetails.getComment()));
 							}catch(Exception e){
 								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("comm => " +line);
+								e.printStackTrace();
 							}
 							
 							try{
-							put.addColumn(Bytes.toBytes("comm"), Bytes.toBytes("score"), Bytes.toBytes(score));
+							put.addColumn(Bytes.toBytes("comm"), Bytes.toBytes("score"), Bytes.toBytes(score.toString()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("score => " + eventDetails.getComment());
+								System.err.println("score => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("event"), Bytes.toBytes("event_name"), Bytes.toBytes(eventDetails.getEvent_name()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("event_name => " + eventDetails.getComment());
+								System.err.println("event_name => " + line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("event"), Bytes.toBytes("event_id"), Bytes.toBytes(eventDetails.getEvent_id()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("event_id => " + eventDetails.getComment());
+								System.err.println("event_id => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("member"), Bytes.toBytes("member_id"), Bytes.toBytes(eventDetails.getMember_id()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("member_id => " + eventDetails.getComment());
+								System.err.println("member_id => " + line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("member"), Bytes.toBytes("member_name"), Bytes.toBytes(eventDetails.getMember_name()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("member_name => " + eventDetails.getComment());
+								System.err.println("member_name => " + line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_city"), Bytes.toBytes(eventDetails.getGroup_city()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_city => " + eventDetails.getComment());
+								System.err.println("group_city => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_country"), Bytes.toBytes(eventDetails.getGroup_country()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_country => " + eventDetails.getComment());
+								System.err.println("group_country => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_state"), Bytes.toBytes(eventDetails.getGroup_state()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_state => " + eventDetails.getComment());
+								System.err.println("group_state => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_id"), Bytes.toBytes(eventDetails.getGroup_id()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_id => " + eventDetails.getComment());
+								System.err.println("group_id => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_name"), Bytes.toBytes(eventDetails.getGroup_name()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_name => " + eventDetails.getComment());
+								System.err.println("group_name => " + line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_lon"), Bytes.toBytes(eventDetails.getGroup_lon()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_lon => " + eventDetails.getComment());
+								System.err.println("group_lon => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_lat"), Bytes.toBytes(eventDetails.getGroup_lat()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_lat => " + eventDetails.getComment());
+								System.err.println("group_lat => " + line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_cat"), Bytes.toBytes(eventDetails.getGroup_cat()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_cat => " + eventDetails.getComment());
+								System.err.println("group_cat => " +line);
 							}
 							
 							try{
 							put.addColumn(Bytes.toBytes("group"), Bytes.toBytes("group_cat_id"), Bytes.toBytes(eventDetails.getGroup_cat_id()));
 							}catch(Exception e){
-								System.err.println("comm => " + eventDetails.getComment());
-								System.err.println(line);
+								System.err.println("group_cat_id => " + eventDetails.getComment());
+								System.err.println("group_cat_id => " +line);
 							}
 							
 							return new Tuple2<ImmutableBytesWritable, Put>(new ImmutableBytesWritable(), put);
